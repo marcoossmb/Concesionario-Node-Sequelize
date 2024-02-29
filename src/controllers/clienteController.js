@@ -5,6 +5,12 @@ const createClient = async (req, res) => {
     res.json(all)
 }
 
+const searchClients = async (req, res) => {
+    const allclients = await clienteservice.searchClients()
+    res.json(allclients)
+}
+
 module.exports = {
-    createClient
+    createClient,
+    searchClients,
 }

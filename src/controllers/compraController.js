@@ -5,6 +5,12 @@ const getAll = async (req, res) => {
     res.json(all)
 }
 
+const createCompra = async (req, res) => {
+    const create = await compraservice.createCompra(req.body)
+   res.json(create)
+}
+
 module.exports = {
-    getAll
+    getAll,
+    createCompra
 }

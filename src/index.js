@@ -14,10 +14,11 @@ app.use("/concesionario", router)
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Servidor escucahndo en puerto ${PORT} 😎`)
+    console.log(`Servidor escuchando en puerto ${PORT} 😎`)
 
     sequelize
         .sync({ force: false })
         .then(() => console.log("Tablas sincronizadas"))
+        .catch((error) => console.log("Error: " + error + " ❌❌"))
 
 })

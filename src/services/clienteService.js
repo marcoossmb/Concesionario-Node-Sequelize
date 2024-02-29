@@ -5,7 +5,12 @@ const createClient = async (newclient) => {
     return createdFilm;
 }
 
+const searchClients = async () => {
+    const clients = await Cliente.findAll()
+    return clients
+}
 
 module.exports = {
-    createClient
+    createClient,
+    searchClients
 }
