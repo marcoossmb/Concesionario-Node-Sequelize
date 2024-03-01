@@ -11,17 +11,17 @@ const allVehicles = async () => {
 }
 
 const oneVehicle = async (nombre_veh) => {
-    const getOneVehicle = await Vehiculo.findOne(nombre_veh)
+    const getOneVehicle = await Vehiculo.findOne({ where: { nombre_veh } })
     return getOneVehicle;
 }
 
 const modifyVehicle = async (newbody, id_veh) => {
-    const modifyOneVehicle = await Vehiculo.update(newbody, id_veh)
+    const modifyOneVehicle = await Vehiculo.update(newbody, { where: { id_veh } })
     return modifyOneVehicle;
 }
 
 const deleteVehicle = async (id_veh) => {
-    const deleteOneVehicle = await Vehiculo.destroy(id_veh)
+    const deleteOneVehicle = await Vehiculo.destroy({ where: { id_veh } })
     return deleteOneVehicle;
 }
 

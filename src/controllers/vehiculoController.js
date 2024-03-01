@@ -12,19 +12,19 @@ const allVehicles = async (req, res) => {
 
 const oneVehicle = async (req, res) => {
     const nombre_veh = req.params.nombre_veh;
-    const one = await vehiculoservice.oneVehicle({ where: { nombre_veh } })
+    const one = await vehiculoservice.oneVehicle(nombre_veh)
     res.json(one)
 }
 
 const modifyVehicle = async (req, res) => {
     const id_veh = req.params.id;
-    const mody = await vehiculoservice.modifyVehicle(req.body, { where: { id_veh } })
+    const mody = await vehiculoservice.modifyVehicle(req.body, id_veh)
     res.json(mody)
 }
 
 const deleteVehicle = async (req, res) => {
     const id_veh = req.params.id;
-    const del = await vehiculoservice.deleteVehicle({ where: { id_veh } })
+    const del = await vehiculoservice.deleteVehicle(id_veh)
     res.json(del)
 }
 
